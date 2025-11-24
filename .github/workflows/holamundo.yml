@@ -1,10 +1,21 @@
-name: Hola Mundo
+name: ejecuta codigo automaticamente
 
 on: workflow_dispatch
 
 jobs:
-  calculadora:
+  run-code:
     runs-on: ubuntu-latest
     steps:
-    - name: Suma
-      run: 2+2
+    - name: Saludar
+      run: echo "Hola Mundo"
+      
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Ejecutar script
+      run: pyhton /src/calculadora.py
