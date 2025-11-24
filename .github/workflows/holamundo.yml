@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Saludar
-      run: echo "Hola Mundo"
+      run: echo 2+2
